@@ -28,6 +28,7 @@ Both Modern and Legacy skins are supported, but you need to specify when a legac
 
 ![alt 3D Skin Viewer Preview](example/previews/preview_3d.png)
 
+```html
 	<!-- Set Skin for the Viewer -->
 	<style>
 		#skin-viewer *{ background-image: url('skin_modern.png'); }
@@ -140,11 +141,12 @@ Both Modern and Legacy skins are supported, but you need to specify when a legac
 			</div>
 		</div>
 	</div>
-		
+```		
 ### 3D Cape Viewer
 
 ![alt 3D Cape Viewer Preview](example/previews/preview_3d_cape.png)
 
+```html
 	<!-- Set Skin for the Viewer -->
 	<style>
 		#cape_viewer *{
@@ -163,12 +165,14 @@ Both Modern and Legacy skins are supported, but you need to specify when a legac
 			</div>
 		</div>
 	</div>
+```
 
 ### 3D Player + Cape Viewer
 3D Player Viewer with 3D Cape
 
 ![alt 3D Skin Viewer Preview](example/previews/preview_3d_skin_cape_1.png) ![alt 3D Skin Viewer Preview](example/previews/preview_3d_skin_cape_2.png)
 
+```html
 	<!-- Set Skin for the Viewer -->
 	<style>
 		#skin-viewer *{ background-image: url('skin_legacy.png'); }
@@ -291,10 +295,13 @@ Both Modern and Legacy skins are supported, but you need to specify when a legac
 			</div>
 		</div>
 	</div>
+```
 
 ### 2D Face Viewer
 Allows to see the 2D representation of the face. Does not require to specify if the skin is legacy or not.
 
 ![alt 3D Cape Viewer Preview](example/previews/preview_2d.png)
 
+```html
 	<div class="mc-face-viewer-8x" style="background-image:url('skin_legacy.png')"></div>
+```
