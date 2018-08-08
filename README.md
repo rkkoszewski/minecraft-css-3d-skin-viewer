@@ -29,142 +29,142 @@ Both Modern and Legacy skins are supported, but you need to specify when a legac
 ![alt 3D Skin Viewer Preview](example/previews/preview_3d.png)
 
 ```html
-	<!-- Set Skin for the Viewer -->
-	<style>
-		#skin-viewer *{ background-image: url('skin_modern.png'); }
-	</style>
-	
-	<!-- Skin Viewer HTML Elements -->
-	<div id="skin-viewer" class="mc-skin-viewer-11x spin">
-		<div class="player">
-			<!-- Head -->
-			<div class="head" >
+<!-- Set Skin for the Viewer -->
+<style>
+	#skin-viewer *{ background-image: url('skin_modern.png'); }
+</style>
+
+<!-- Skin Viewer HTML Elements -->
+<div id="skin-viewer" class="mc-skin-viewer-11x spin">
+	<div class="player">
+		<!-- Head -->
+		<div class="head" >
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
+			<div class="bottom"></div>
+			<div class="accessory">
 				<div class="top"></div>
 				<div class="left"></div>
 				<div class="front"></div>
 				<div class="right"></div>
 				<div class="back"></div>
 				<div class="bottom"></div>
-				<div class="accessory">
-					<div class="top"></div>
-					<div class="left"></div>
-					<div class="front"></div>
-					<div class="right"></div>
-					<div class="back"></div>
-					<div class="bottom"></div>
-				</div>
 			</div>
-			<!-- Body -->
-			<div class="body">
+		</div>
+		<!-- Body -->
+		<div class="body">
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
+			<div class="bottom"></div>
+			<div class="accessory">
 				<div class="top"></div>
 				<div class="left"></div>
 				<div class="front"></div>
 				<div class="right"></div>
 				<div class="back"></div>
 				<div class="bottom"></div>
-				<div class="accessory">
-					<div class="top"></div>
-					<div class="left"></div>
-					<div class="front"></div>
-					<div class="right"></div>
-					<div class="back"></div>
-					<div class="bottom"></div>
-				</div>
 			</div>
-			<!-- Left Arm -->
-			<div class="left-arm">
+		</div>
+		<!-- Left Arm -->
+		<div class="left-arm">
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
+			<div class="bottom"></div>
+			<div class="accessory">
 				<div class="top"></div>
 				<div class="left"></div>
 				<div class="front"></div>
 				<div class="right"></div>
 				<div class="back"></div>
 				<div class="bottom"></div>
-				<div class="accessory">
-					<div class="top"></div>
-					<div class="left"></div>
-					<div class="front"></div>
-					<div class="right"></div>
-					<div class="back"></div>
-					<div class="bottom"></div>
-				</div>
 			</div>
-			<!-- Right Arm -->
-			<div class="right-arm">
+		</div>
+		<!-- Right Arm -->
+		<div class="right-arm">
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
+			<div class="bottom"></div>
+			<div class="accessory">
 				<div class="top"></div>
 				<div class="left"></div>
 				<div class="front"></div>
 				<div class="right"></div>
 				<div class="back"></div>
 				<div class="bottom"></div>
-				<div class="accessory">
-					<div class="top"></div>
-					<div class="left"></div>
-					<div class="front"></div>
-					<div class="right"></div>
-					<div class="back"></div>
-					<div class="bottom"></div>
-				</div>
 			</div>
-			<!-- Left Leg -->
-			<div class="left-leg">
+		</div>
+		<!-- Left Leg -->
+		<div class="left-leg">
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
+			<div class="bottom"></div>
+			<div class="accessory">
 				<div class="top"></div>
 				<div class="left"></div>
 				<div class="front"></div>
 				<div class="right"></div>
 				<div class="back"></div>
 				<div class="bottom"></div>
-				<div class="accessory">
-					<div class="top"></div>
-					<div class="left"></div>
-					<div class="front"></div>
-					<div class="right"></div>
-					<div class="back"></div>
-					<div class="bottom"></div>
-				</div>
 			</div>
-			<!-- Right Leg -->
-			<div class="right-leg">
+		</div>
+		<!-- Right Leg -->
+		<div class="right-leg">
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
+			<div class="bottom"></div>
+			<div class="accessory">
 				<div class="top"></div>
 				<div class="left"></div>
 				<div class="front"></div>
 				<div class="right"></div>
 				<div class="back"></div>
 				<div class="bottom"></div>
-				<div class="accessory">
-					<div class="top"></div>
-					<div class="left"></div>
-					<div class="front"></div>
-					<div class="right"></div>
-					<div class="back"></div>
-					<div class="bottom"></div>
-				</div>
 			</div>
 		</div>
 	</div>
+</div>
 ```		
 ### 3D Cape Viewer
 
 ![alt 3D Cape Viewer Preview](example/previews/preview_3d_cape.png)
 
 ```html
-	<!-- Set Skin for the Viewer -->
-	<style>
-		#cape_viewer *{
-			background-image: url('cape_legacy.png');
-		}
-	</style>
-	
-	<!-- Cape Viewer -->
-	<div id="cape_viewer" class="mc-cape-viewer-9x spin wave legacy">
-		<div class="wrapper">
-			<div class="cape">
-				<div class="left"></div>
-				<div class="front"></div>
-				<div class="right"></div>
-				<div class="back"></div>
-			</div>
+<!-- Set Skin for the Viewer -->
+<style>
+	#cape_viewer *{
+		background-image: url('cape_legacy.png');
+	}
+</style>
+
+<!-- Cape Viewer -->
+<div id="cape_viewer" class="mc-cape-viewer-9x spin wave legacy">
+	<div class="wrapper">
+		<div class="cape">
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
 		</div>
 	</div>
+</div>
 ```
 
 ### 3D Player + Cape Viewer
@@ -173,119 +173,24 @@ Both Modern and Legacy skins are supported, but you need to specify when a legac
 ![alt 3D Skin Viewer Preview](example/previews/preview_3d_skin_cape_1.png) ![alt 3D Skin Viewer Preview](example/previews/preview_3d_skin_cape_2.png)
 
 ```html
-	<!-- Set Skin for the Viewer -->
-	<style>
-		#skin-viewer *{ background-image: url('skin_legacy.png'); }
-		#skin-viewer .cape{ background-image: url('cape_legacy.png'); }
-	</style>
-	
-	<!-- Skin Viewer HTML Elements -->
-	<div id="skin-viewer" class="mc-skin-viewer-11x legacy legacy-cape spin">
-		<div class="player">
-			<!-- Head -->
-			<div class="head" >
-				<div class="top"></div>
-				<div class="left"></div>
-				<div class="front"></div>
-				<div class="right"></div>
-				<div class="back"></div>
-				<div class="bottom"></div>
-				<div class="accessory">
-					<div class="top"></div>
-					<div class="left"></div>
-					<div class="front"></div>
-					<div class="right"></div>
-					<div class="back"></div>
-					<div class="bottom"></div>
-				</div>
-			</div>
-			<!-- Body -->
-			<div class="body">
-				<div class="top"></div>
-				<div class="left"></div>
-				<div class="front"></div>
-				<div class="right"></div>
-				<div class="back"></div>
-				<div class="bottom"></div>
-				<div class="accessory">
-					<div class="top"></div>
-					<div class="left"></div>
-					<div class="front"></div>
-					<div class="right"></div>
-					<div class="back"></div>
-					<div class="bottom"></div>
-				</div>
-			</div>
-			<!-- Left Arm -->
-			<div class="left-arm">
-				<div class="top"></div>
-				<div class="left"></div>
-				<div class="front"></div>
-				<div class="right"></div>
-				<div class="back"></div>
-				<div class="bottom"></div>
-				<div class="accessory">
-					<div class="top"></div>
-					<div class="left"></div>
-					<div class="front"></div>
-					<div class="right"></div>
-					<div class="back"></div>
-					<div class="bottom"></div>
-				</div>
-			</div>
-			<!-- Right Arm -->
-			<div class="right-arm">
-				<div class="top"></div>
-				<div class="left"></div>
-				<div class="front"></div>
-				<div class="right"></div>
-				<div class="back"></div>
-				<div class="bottom"></div>
-				<div class="accessory">
-					<div class="top"></div>
-					<div class="left"></div>
-					<div class="front"></div>
-					<div class="right"></div>
-					<div class="back"></div>
-					<div class="bottom"></div>
-				</div>
-			</div>
-			<!-- Left Leg -->
-			<div class="left-leg">
-				<div class="top"></div>
-				<div class="left"></div>
-				<div class="front"></div>
-				<div class="right"></div>
-				<div class="back"></div>
-				<div class="bottom"></div>
-				<div class="accessory">
-					<div class="top"></div>
-					<div class="left"></div>
-					<div class="front"></div>
-					<div class="right"></div>
-					<div class="back"></div>
-					<div class="bottom"></div>
-				</div>
-			</div>
-			<!-- Right Leg -->
-			<div class="right-leg">
-				<div class="top"></div>
-				<div class="left"></div>
-				<div class="front"></div>
-				<div class="right"></div>
-				<div class="back"></div>
-				<div class="bottom"></div>
-				<div class="accessory">
-					<div class="top"></div>
-					<div class="left"></div>
-					<div class="front"></div>
-					<div class="right"></div>
-					<div class="back"></div>
-					<div class="bottom"></div>
-				</div>
-			</div>
-			<!-- Cape -->
-			<div class="cape">
+<!-- Set Skin for the Viewer -->
+<style>
+	#skin-viewer *{ background-image: url('skin_legacy.png'); }
+	#skin-viewer .cape{ background-image: url('cape_legacy.png'); }
+</style>
+
+<!-- Skin Viewer HTML Elements -->
+<div id="skin-viewer" class="mc-skin-viewer-11x legacy legacy-cape spin">
+	<div class="player">
+		<!-- Head -->
+		<div class="head" >
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
+			<div class="bottom"></div>
+			<div class="accessory">
 				<div class="top"></div>
 				<div class="left"></div>
 				<div class="front"></div>
@@ -294,7 +199,102 @@ Both Modern and Legacy skins are supported, but you need to specify when a legac
 				<div class="bottom"></div>
 			</div>
 		</div>
+		<!-- Body -->
+		<div class="body">
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
+			<div class="bottom"></div>
+			<div class="accessory">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+			</div>
+		</div>
+		<!-- Left Arm -->
+		<div class="left-arm">
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
+			<div class="bottom"></div>
+			<div class="accessory">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+			</div>
+		</div>
+		<!-- Right Arm -->
+		<div class="right-arm">
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
+			<div class="bottom"></div>
+			<div class="accessory">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+			</div>
+		</div>
+		<!-- Left Leg -->
+		<div class="left-leg">
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
+			<div class="bottom"></div>
+			<div class="accessory">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+			</div>
+		</div>
+		<!-- Right Leg -->
+		<div class="right-leg">
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
+			<div class="bottom"></div>
+			<div class="accessory">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+			</div>
+		</div>
+		<!-- Cape -->
+		<div class="cape">
+			<div class="top"></div>
+			<div class="left"></div>
+			<div class="front"></div>
+			<div class="right"></div>
+			<div class="back"></div>
+			<div class="bottom"></div>
+		</div>
 	</div>
+</div>
 ```
 
 ### 2D Face Viewer
@@ -303,5 +303,5 @@ Allows to see the 2D representation of the face. Does not require to specify if 
 ![alt 3D Cape Viewer Preview](example/previews/preview_2d.png)
 
 ```html
-	<div class="mc-face-viewer-8x" style="background-image:url('skin_legacy.png')"></div>
+<div class="mc-face-viewer-8x" style="background-image:url('skin_legacy.png')"></div>
 ```
