@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Minecraft 3D and 2D Skin Viewer in pure CSS</title>
+	<meta name="author" content="Robert Koszewski">
+
+	<!-- Skin Viewer Stylesheet --->
+	<link rel="stylesheet" href="minecraft-skinviewer.css">
+
+	<!-- Code Highlighter -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	
+	<!-- Page Style -->
+	<style>
+	body { 
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	</style>
+</head>
+<body>
+	<h1>Minecraft 3D and 2D Skin Viewer in pure CSS</h1>
+	
+	<!-- Introduction -->
+	<h2>Introduction</h2>
+	<p>This project started as a hands on experiment with CSS3 3D transforms to try to recreate 3D objects in pure CSS. The simplicity of the Minecraft character plus the fact that all the skin viewers I could find back when I started were all made with JavaScript and Canvas or Adobe Flash, which made this project the perfect candidate for such experiment.</p>
+	<p>The main idea here is to take JavaScript out of the equation, and leverage all rendering to the HTML engine of the browser.</p>
+	<p>The project features a 3D player viewer with or without cape, a 3D cape viewer and a 2D face viewer. You can use the example folder to see how to compile the required LessCSS files and how to use them.</p>
+	<p>The viewer is basically controlled with CSS classes. The viewers are designed to support different zoom factors. (More info on this, look inside the <a href="minecraft-skinviewer.less">minecraft-skinviewer.less</a> example). Special effects like rotation or waving are found in the <b>mc-viewer-effects.less</b> file.</p>
+	<p>This library supports both <b>Modern</b> and <b>Legacy</b> <b>Skin</b> and <b>Cape</b> formats.</p>
+	<hr/>
+	
+	<h3>Known limitations</h3>
+	<p>Browser compatibility may vary. Chrome and Firefox seems to support all the necessary features. At the nearest-neighbor image filtering setting, and therefore the skin texture will be blurry.</p>
+	<hr/>
+	
+	<h3>License</h3>
+	<p>This project is MIT licensed. The author is Robert Koszewski. More information can be found in the LICENSE file.</p>
+	<hr/>
+	
+	<!-- Content List -->
+	<h2>Content</h2>
+	<ul>
+		<li><a href="#ref_3dint">3D Viewer: Introduction</a></li>
+		<li><a href="#ref_3dp">3D Player Viewer</a></li>
+		<li><a href="#ref_3dc">3D Cape Viewer</a></li>
+		<li><a href="#ref_3dpc">3D Player + Cape Viewer</a></li>
+		<li><a href="#ref_2df">2D Player Face Viewer</a></li>
+	</ul>
+	<hr/>
+
+	<!-- 3D Skin Viewer -->
+	<h2>3D Skin Viewer</h2>
+	
+	<!-- Player + Cape -->
+	<h3 id="ref_3dint">3D Viewer: Introduction</h3>
+	<p>The 3D Player viewer is made in pure HTML and CSS and therefore requires the use of both. First the HTML elements are required for positioning of the faces. This HTML can be copied from the following examples. The viewer gets initialized with the "mc-skin-viewer-*x" class where the "*" is the choosen zoom level like for example mc-skin-viewer-11x. Then effects like "spin" or "wave" can be added to have the player to be spinning or waving. The position of the player can also be modified by using "<b>transform:rotate*</b>" on the element that has the "mc-skin-viewer-*x" class. </p>
+	
+	<h3>Modern and Legacy skin support</h3>
+	<p>Both Modern and Legacy skins are supported, but you need to specify when a legacy skin is in use and when not. By default the modern skin format is used. In order to use the legacy format you need to add the "legacy" class for the skin, or "legacy-cape" class for the cape to activate each type.</p>
+	
+	<!-- 3D Player Viewer -->
+	<h3 id="ref_3dp">3D Player Viewer</h3>
+	<p>3D Player Viewer (Without Cape)</p>
+	
+	<!-- Set Skin for the Viewer -->
+	<style>
+		#skin-viewer *{ background-image: url('skin_modern.png'); }
+	</style>
+
+	<!-- ############################################################## -->
+	<!-- Skin Viewer HTML Elements -->
+	<!-- ############################################################## -->
+	<div id="skin-viewer" class="mc-skin-viewer-11x spin">
+		<div class="player">
+			<!-- Head -->
+			<div class="head" >
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Body -->
+			<div class="body">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Left Arm -->
+			<div class="left-arm">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Right Arm -->
+			<div class="right-arm">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Left Leg -->
+			<div class="left-leg">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Right Leg -->
+			<div class="right-leg">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Code Preview -->
+	<pre>
+		<code class="html">
+&lt;!-- Set Skin for the Viewer --&gt;
+&lt;style&gt;
+	#skin-viewer *{ background-image: url('skin_modern.png'); }
+&lt;/style&gt;
+
+&lt;!-- Skin Viewer HTML Elements --&gt;
+&lt;div id="skin-viewer" class="mc-skin-viewer-11x spin"&gt;
+	&lt;div class="player"&gt;
+		&lt;!-- Head --&gt;
+		&lt;div class="head" &gt;
+			&lt;div class="top"&gt;&lt;/div&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;div class="accessory"&gt;
+				&lt;div class="top"&gt;&lt;/div&gt;
+				&lt;div class="left"&gt;&lt;/div&gt;
+				&lt;div class="front"&gt;&lt;/div&gt;
+				&lt;div class="right"&gt;&lt;/div&gt;
+				&lt;div class="back"&gt;&lt;/div&gt;
+				&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- Body --&gt;
+		&lt;div class="body"&gt;
+			&lt;div class="top"&gt;&lt;/div&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;div class="accessory"&gt;
+				&lt;div class="top"&gt;&lt;/div&gt;
+				&lt;div class="left"&gt;&lt;/div&gt;
+				&lt;div class="front"&gt;&lt;/div&gt;
+				&lt;div class="right"&gt;&lt;/div&gt;
+				&lt;div class="back"&gt;&lt;/div&gt;
+				&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- Left Arm --&gt;
+		&lt;div class="left-arm"&gt;
+			&lt;div class="top"&gt;&lt;/div&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;div class="accessory"&gt;
+				&lt;div class="top"&gt;&lt;/div&gt;
+				&lt;div class="left"&gt;&lt;/div&gt;
+				&lt;div class="front"&gt;&lt;/div&gt;
+				&lt;div class="right"&gt;&lt;/div&gt;
+				&lt;div class="back"&gt;&lt;/div&gt;
+				&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- Right Arm --&gt;
+		&lt;div class="right-arm"&gt;
+			&lt;div class="top"&gt;&lt;/div&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;div class="accessory"&gt;
+				&lt;div class="top"&gt;&lt;/div&gt;
+				&lt;div class="left"&gt;&lt;/div&gt;
+				&lt;div class="front"&gt;&lt;/div&gt;
+				&lt;div class="right"&gt;&lt;/div&gt;
+				&lt;div class="back"&gt;&lt;/div&gt;
+				&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- Left Leg --&gt;
+		&lt;div class="left-leg"&gt;
+			&lt;div class="top"&gt;&lt;/div&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;div class="accessory"&gt;
+				&lt;div class="top"&gt;&lt;/div&gt;
+				&lt;div class="left"&gt;&lt;/div&gt;
+				&lt;div class="front"&gt;&lt;/div&gt;
+				&lt;div class="right"&gt;&lt;/div&gt;
+				&lt;div class="back"&gt;&lt;/div&gt;
+				&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- Right Leg --&gt;
+		&lt;div class="right-leg"&gt;
+			&lt;div class="top"&gt;&lt;/div&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;div class="accessory"&gt;
+				&lt;div class="top"&gt;&lt;/div&gt;
+				&lt;div class="left"&gt;&lt;/div&gt;
+				&lt;div class="front"&gt;&lt;/div&gt;
+				&lt;div class="right"&gt;&lt;/div&gt;
+				&lt;div class="back"&gt;&lt;/div&gt;
+				&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+		</code>
+	</pre>
+	<hr/>
+	
+	<!-- ############################################################## -->
+	<!-- Cape -->
+	<!-- ############################################################## -->
+	<h3 id="ref_3dc">3D Cape Viewer</h3>
+	
+	<!-- Set Skin for the Viewer -->
+	<style>
+		#cape_viewer *{
+			background-image: url('cape_legacy.png');
+		}
+	</style>
+	
+	<!-- Cape Viewer -->
+	<div id="cape_viewer" class="mc-cape-viewer-9x spin wave legacy">
+		<div class="wrapper">
+			<div class="cape">
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+			</div>
+		</div>
+	</div>
+	
+		<!-- Code Preview -->
+	<pre>
+		<code class="html">
+&lt;!-- Set Skin for the Viewer --&gt;
+&lt;style&gt;
+	#cape_viewer *{
+		background-image: url('cape_legacy.png');
+	}
+&lt;/style&gt;
+
+&lt;!-- Cape Viewer --&gt;
+&lt;div id="cape_viewer" class="mc-cape-viewer-9x spin wave legacy"&gt;
+	&lt;div class="wrapper"&gt;
+		&lt;div class="cape"&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+		</code>
+	</pre>
+	<hr/>
+	
+	<!-- ############################################################## -->
+	<!-- Player + Cape -->
+	<!-- ############################################################## -->
+	<h3 id="ref_3dpc">3D Player + Cape Viewer</h3>
+	<p>3D Player Viewer with 3D Cape</p>
+	
+	<!-- Set Skin for the Viewer -->
+	<style>
+		#skin-viewer-2 *{ background-image: url('skin_legacy.png'); }
+		#skin-viewer-2 .cape{ background-image: url('cape_legacy.png'); }
+	</style>
+
+	<!-- Skin Viewer HTML Elements -->
+	<div id="skin-viewer-2" class="mc-skin-viewer-11x legacy legacy-cape spin">
+		<div class="player">
+			<!-- Head -->
+			<div class="head" >
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Body -->
+			<div class="body">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Left Arm -->
+			<div class="left-arm">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Right Arm -->
+			<div class="right-arm">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Left Leg -->
+			<div class="left-leg">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Right Leg -->
+			<div class="right-leg">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+				<div class="accessory">
+					<div class="top"></div>
+					<div class="left"></div>
+					<div class="front"></div>
+					<div class="right"></div>
+					<div class="back"></div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<!-- Cape -->
+			<div class="cape">
+				<div class="top"></div>
+				<div class="left"></div>
+				<div class="front"></div>
+				<div class="right"></div>
+				<div class="back"></div>
+				<div class="bottom"></div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Code Preview -->
+	<pre>
+		<code class="html">
+&lt;!-- Set Skin for the Viewer --&gt;
+&lt;style&gt;
+	#skin-viewer *{ background-image: url('skin_legacy.png'); }
+	#skin-viewer .cape{ background-image: url('cape_legacy.png'); }
+&lt;/style&gt;
+
+&lt;!-- Skin Viewer HTML Elements --&gt;
+&lt;div id="skin-viewer" class="mc-skin-viewer-11x legacy legacy-cape spin"&gt;
+	&lt;div class="player"&gt;
+		&lt;!-- Head --&gt;
+		&lt;div class="head" &gt;
+			&lt;div class="top"&gt;&lt;/div&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;div class="accessory"&gt;
+				&lt;div class="top"&gt;&lt;/div&gt;
+				&lt;div class="left"&gt;&lt;/div&gt;
+				&lt;div class="front"&gt;&lt;/div&gt;
+				&lt;div class="right"&gt;&lt;/div&gt;
+				&lt;div class="back"&gt;&lt;/div&gt;
+				&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- Body --&gt;
+		&lt;div class="body"&gt;
+			&lt;div class="top"&gt;&lt;/div&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;div class="accessory"&gt;
+				&lt;div class="top"&gt;&lt;/div&gt;
+				&lt;div class="left"&gt;&lt;/div&gt;
+				&lt;div class="front"&gt;&lt;/div&gt;
+				&lt;div class="right"&gt;&lt;/div&gt;
+				&lt;div class="back"&gt;&lt;/div&gt;
+				&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- Left Arm --&gt;
+		&lt;div class="left-arm"&gt;
+			&lt;div class="top"&gt;&lt;/div&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;div class="accessory"&gt;
+				&lt;div class="top"&gt;&lt;/div&gt;
+				&lt;div class="left"&gt;&lt;/div&gt;
+				&lt;div class="front"&gt;&lt;/div&gt;
+				&lt;div class="right"&gt;&lt;/div&gt;
+				&lt;div class="back"&gt;&lt;/div&gt;
+				&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- Right Arm --&gt;
+		&lt;div class="right-arm"&gt;
+			&lt;div class="top"&gt;&lt;/div&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;div class="accessory"&gt;
+				&lt;div class="top"&gt;&lt;/div&gt;
+				&lt;div class="left"&gt;&lt;/div&gt;
+				&lt;div class="front"&gt;&lt;/div&gt;
+				&lt;div class="right"&gt;&lt;/div&gt;
+				&lt;div class="back"&gt;&lt;/div&gt;
+				&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- Left Leg --&gt;
+		&lt;div class="left-leg"&gt;
+			&lt;div class="top"&gt;&lt;/div&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;div class="accessory"&gt;
+				&lt;div class="top"&gt;&lt;/div&gt;
+				&lt;div class="left"&gt;&lt;/div&gt;
+				&lt;div class="front"&gt;&lt;/div&gt;
+				&lt;div class="right"&gt;&lt;/div&gt;
+				&lt;div class="back"&gt;&lt;/div&gt;
+				&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- Right Leg --&gt;
+		&lt;div class="right-leg"&gt;
+			&lt;div class="top"&gt;&lt;/div&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;div class="accessory"&gt;
+				&lt;div class="top"&gt;&lt;/div&gt;
+				&lt;div class="left"&gt;&lt;/div&gt;
+				&lt;div class="front"&gt;&lt;/div&gt;
+				&lt;div class="right"&gt;&lt;/div&gt;
+				&lt;div class="back"&gt;&lt;/div&gt;
+				&lt;div class="bottom"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- Cape --&gt;
+		&lt;div class="cape"&gt;
+			&lt;div class="top"&gt;&lt;/div&gt;
+			&lt;div class="left"&gt;&lt;/div&gt;
+			&lt;div class="front"&gt;&lt;/div&gt;
+			&lt;div class="right"&gt;&lt;/div&gt;
+			&lt;div class="back"&gt;&lt;/div&gt;
+			&lt;div class="bottom"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+		</code>
+	</pre>
+	<hr/>
+	
+	<!-- ############################################################## -->
+	<!-- Face Viewer -->
+	<!-- ############################################################## -->
+	<h3 id="ref_2df">2D Face Viewer</h3>
+	<p>Allows to see the 2D representation of the face. Does not require to specify if the skin is legacy or not.</p>
+	
+	<div class="mc-face-viewer-8x" style="background-image:url('skin_legacy.png')"></div>
+	
+	<!-- Code Preview -->
+	<pre>
+		<code class="html">
+&lt;div class="mc-face-viewer-8x" style="background-image:url('skin_legacy.png')"&gt;&lt;/div&gt;
+		</code>
+	</pre>
+
+</body>
+</html>
