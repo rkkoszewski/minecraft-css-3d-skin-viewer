@@ -20,7 +20,7 @@ This project is MIT licensed. The author is Robert Koszewski. More information c
 ### 3D Viewer: Introduction
 The 3D Player viewer is made in pure HTML and CSS and therefore requires the use of both. First the HTML elements are required for positioning of the faces. This HTML can be copied from the following examples. The viewer gets initialized with the "mc-skin-viewer-*x" class where the "*" is the choosen zoom level like for example mc-skin-viewer-11x. Then effects like "spin" or "wave" can be added to have the player to be spinning or waving. The position of the player can also be modified by using "transform:rotate*" on the element that has the "mc-skin-viewer-*x" class.
 
-###Modern and Legacy skin support
+### Modern and Legacy skin support
 Both Modern and Legacy skins are supported, but you need to specify when a legacy skin is in use and when not. By default the modern skin format is used. In order to use the legacy format you need to add the "legacy" class for the skin, or "legacy-cape" class for the cape to activate each type.
 
 ### 3D Player Viewer
