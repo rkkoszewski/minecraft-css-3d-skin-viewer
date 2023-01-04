@@ -23,6 +23,9 @@ The 3D Player viewer is made in pure HTML and CSS and therefore requires the use
 ### Modern and Legacy skin support
 Both Modern and Legacy skins are supported, but you need to specify when a legacy skin is in use and when not. By default the modern skin format is used. In order to use the legacy format you need to add the "legacy" class for the skin, or "legacy-cape" class for the cape to activate each type.
 
+### Slim Model support (Aka. Alex)
+By default the 3D skin viewer uses the default player model (Steve). To use the slim model (Alex) you need to add the class "slim".
+
 ### 3D Player Viewer
 3D Player Viewer (Without Cape)
 
